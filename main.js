@@ -59,7 +59,7 @@ function listTodos() {
             console.log(`${index + 1}. ${todo.task} - ${status}`);
         });
     }
-    console.log(""); // Add a line space after listing todos
+    console.log("");
 }
 
 function addTodo() {
@@ -70,7 +70,7 @@ function addTodo() {
             todos.push({ task: answers.task, done: false });
             saveTodos(todos);
             console.log(getRandomColor()('Todo added successfully.'));
-            console.log(""); // Add a line space after adding a todo
+            console.log("")
             mainMenu();
         });
 }
@@ -79,7 +79,7 @@ function deleteTodo() {
     const todos = loadTodos();
     if (todos.length === 0) {
         console.log(getRandomColor()('No todos found.'));
-        console.log(""); // Add a line space after no todos found
+        console.log(""); 
         mainMenu();
         return;
     }
@@ -94,7 +94,7 @@ function deleteTodo() {
             } else {
                 console.log(getRandomColor()('Invalid todo number.'));
             }
-            console.log(""); // Add a line space after deleting a todo
+            console.log(""); 
             mainMenu();
         });
 }
@@ -103,7 +103,7 @@ function markTodoDone() {
     const todos = loadTodos();
     if (todos.length === 0) {
         console.log(getRandomColor()('No todos found.'));
-        console.log(""); // Add a line space after no todos found
+        console.log("");
         mainMenu();
         return;
     }
@@ -118,7 +118,7 @@ function markTodoDone() {
             } else {
                 console.log(getRandomColor()('Invalid todo number.'));
             }
-            console.log(""); // Add a line space after marking a todo as done
+            console.log("");
             mainMenu();
         });
 }
@@ -152,7 +152,7 @@ function mainMenu() {
                     break;
                 case 'List all todos':
                     listTodos();
-                    mainMenu(); // Ensure the menu is displayed after listing todos
+                    mainMenu();
                     break;
                 case 'Exit':
                     console.log(getRandomColor()('Goodbye!'));
@@ -161,7 +161,6 @@ function mainMenu() {
         });
 }
 
-// Define commands using commander
 program
     .command('start')
     .description('Start the todo CLI tool')
